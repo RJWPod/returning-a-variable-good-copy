@@ -11,14 +11,17 @@ input.onButtonPressed(Button.AB, function () {
     basic.showString("" + (Hidden_Number(User_Guess)))
 })
 input.onButtonPressed(Button.B, function () {
-    User_Guess += 1
-    basic.showNumber(User_Guess)
+    if (User_Guess < 20) {
+        User_Guess += 1
+        basic.showNumber(User_Guess)
+    }
 })
 input.onGesture(Gesture.Shake, function () {
     basic.showString("#Tries=")
     basic.showString("" + (Guesses(Tries)))
     basic.pause(1000)
     basic.clearScreen()
+    basic.pause(500)
     basic.showNumber(User_Guess)
 })
 function Hidden_Number (num: number) {
