@@ -17,6 +17,9 @@ input.onButtonPressed(Button.B, function () {
 input.onGesture(Gesture.Shake, function () {
     basic.showString("#Tries=")
     basic.showString("" + (Guesses(Tries)))
+    basic.pause(1000)
+    basic.clearScreen()
+    basic.showNumber(User_Guess)
 })
 function Hidden_Number (num: number) {
     if (num == Random) {
